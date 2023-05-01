@@ -10,13 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.GymMemberDAO;
 import dao.LoginDAO;
 import model.GymMember;
 import model.Login;
 
-@WebServlet(urlPatterns = { "/Controller", "/login","/goToList" })
+@WebServlet(urlPatterns = { "/Controller", "/login","/goToList","/goToCreate"})
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	GymMemberDAO gymMemberDAO = new GymMemberDAO(); 
 	
 	static {
 		/*Espaço para add novos logins*/
@@ -32,6 +34,9 @@ public class Controller extends HttpServlet {
 		
 		if (action.equals("/goToList")) {
 			/*método ir para pagina lista*/
+			
+		}else if(action.equals("/goToCreate")) {
+			/*método ir para add pag*/
 			
 		}
 	}
@@ -68,7 +73,8 @@ public class Controller extends HttpServlet {
 	}
 	protected void acessarLista(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/*ArrayList<Gym> listaGym = GymDAO.listarCurso();*/	
+		ArrayList<GymMember> listaGym = gymMemberDAO.listar();	
+		
 		
 	}
 }
