@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -34,9 +35,12 @@ public class Controller extends HttpServlet {
 		
 		if (action.equals("/goToList")) {
 			/*método ir para pagina lista*/
+			acessarLista(request, response);
 			
 		}else if(action.equals("/goToCreate")) {
 			/*método ir para add pag*/
+			telaAdd(request, response);
+		}else if (action.equals("/createGM")) {
 			
 		}
 	}
@@ -73,8 +77,17 @@ public class Controller extends HttpServlet {
 	}
 	protected void acessarLista(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ArrayList<GymMember> listaGym = gymMemberDAO.listar();	
-		
-		
+		ArrayList<GymMember> listaGymMember = gymMemberDAO.listar();
+		request.setAttribute("listaGM", listaGymMember);
+		RequestDispatcher rd = request.getRequestDispatcher("listGymMember.jsp");
+		rd.forward(request, response);
+		listaGymMember.forEach(System.out::println);
+	}
+	protected void telaAdd(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ArrayList<GymMember> listaGymMember = gymMemberDAO.listar();
+		request.setAttribute("listaGM", listaGymMember);
+		RequestDispatcher rd = request.getRequestDispatcher("create.jsp");
+		rd.forward(request, response);
 	}
 }

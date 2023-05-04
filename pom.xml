@@ -16,19 +16,16 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<dependencies>
-					<!--
-					https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-					<dependency>
-						<groupId>org.postgresql</groupId>
-						<artifactId>postgresql</artifactId>
-						<version>42.6.0</version>
-					</dependency>
-
-				</dependencies>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.3</version>
 			</plugin>
 		</plugins>
 	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.6.0</version>
+		</dependency>
+	</dependencies>
 </project>
