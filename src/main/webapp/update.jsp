@@ -7,12 +7,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- add css e js -->
 <title>Insert title here</title>
 </head>
 <body>
 <h1>UPDATE</h1>
 	<form action="updateGM" method="post">
-		<!-- FAZER FORM -->
 <h2>Data about Gym Members</h2>
 <input type="hidden" name="id" value="<%=gymMember.getId() %>">
 		<label for="name">Name:</label> 

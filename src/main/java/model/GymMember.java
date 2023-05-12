@@ -3,22 +3,23 @@ package model;
 public class GymMember {
 	private Integer id;
 	
-	private String nome;
+	private String name;
 	
-	private String sexo;
+	private String sex;
 	
-	private String peso;
+	private String weight
+;
 	
 	public GymMember() {
 		super();
 	}
 
-	public GymMember(Integer id, String nome, String sexo, String peso) {
+	public GymMember(Integer id, String name, String sex, String weight) {
 		super();
 		this.id = id;
-		this.nome = nome;
-		this.sexo = sexo;
-		this.peso = peso;
+		this.name = name;
+		this.sex = sex;
+		this.weight = weight;
 	}
 
 	public Integer getId() {
@@ -29,28 +30,28 @@ public class GymMember {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String nome) {
+		this.name = nome;
 	}
 
-	public String getSexo() {
-		return sexo;
+	public String getSex() {
+		return sex;
 	}
 
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
-	public String getPeso() {
-		return peso;
+	public String getWeight() {
+		return weight;
 	}
 
-	public void setPeso(String peso) {
-		this.peso = peso;
+	public void setWeight(String weight) {
+		this.weight = weight;
 	}
 	
 }

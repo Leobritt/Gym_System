@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -25,7 +24,7 @@ public class Controller extends HttpServlet {
 	GymMember gymMember = new GymMember();
 
 	static {
-		/* Espaço para add novos logins */
+		/* Space to add new logins */
 		LoginDAO loginDAO = new LoginDAO();
 		loginDAO.salvar(new Login("adm", "1234"));
 
@@ -37,19 +36,20 @@ public class Controller extends HttpServlet {
 		System.out.println(action);
 
 		if (action.equals("/goToList")) {
-			/* método ir para pagina lista */
+			/* method go to page list */
 			acessarLista(request, response);
 
 		} else if (action.equals("/goToCreate")) {
-			/* método ir para add pag */
+			/* method go to add page */
 			telaAdd(request, response);
 		} else if (action.equals("/createGM")) {
+			/* method add GM */
 			createGM(request, response);
 		} else if (action.equals("/goToUpdate")) {
-			/* método para ir pag update */
+			/* method to go to page update */
 			telaUpdateGM(request, response);
 		} else if (action.equals("/delete")) {
-			/* método para ir */
+			/* method delete */
 			deleteGM(request, response);
 		}
 	}
@@ -59,7 +59,7 @@ public class Controller extends HttpServlet {
 		String action = request.getServletPath();
 		System.out.println(action);
 
-		/* Parametros vindos do login.html */
+		/* Parameters from login.html */
 		String login = request.getParameter("login");
 		String senha = request.getParameter("pwd");
 
@@ -68,50 +68,51 @@ public class Controller extends HttpServlet {
 
 		LoginDAO loginDAO = new LoginDAO();
 
-		/* O método findByLogin retorna um obj */
+		/* The findByLogin method returns an obj */
 		Login l = loginDAO.findByLogin(login, senha);
 
 		if (action.equals("/login")) {
 			if (l != null) {
-				/* redirecionar para pagina de explicacao */
+				/* redirect to explanation page */
 				RequestDispatcher rd = request.getRequestDispatcher("txt.html");
 				rd.forward(request, response);
-				System.out.println("sucesso");
 			} else {
-				/* redirecionar para a pagina de login */
+				/* redirect to login page */
 				RequestDispatcher rd = request.getRequestDispatcher("login.html");
 				rd.forward(request, response);
 
 			}
 		} else if (action.equals("/updateGM")) {
-			/* método para fazer Update */
+			/* method to do Update */
 			updateGM(request, response);
 
 		}
 	}
 
+	/* Method to access the list */
 	protected void acessarLista(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ArrayList<GymMember> listaGymMember = gymMemberDAO.listar();
+		ArrayList<GymMember> listaGymMember = gymMemberDAO.list();
 		request.setAttribute("listaGM", listaGymMember);
 		RequestDispatcher rd = request.getRequestDispatcher("listGymMember.jsp");
 		rd.forward(request, response);
-		listaGymMember.forEach(System.out::println);
 	}
 
+	/* Method to go to add screen */
 	protected void telaAdd(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ArrayList<GymMember> listaGymMember = gymMemberDAO.listar();
+		ArrayList<GymMember> listaGymMember = gymMemberDAO.list();
 		request.setAttribute("listaGM", listaGymMember);
 		RequestDispatcher rd = request.getRequestDispatcher("create.jsp");
 		rd.forward(request, response);
 	}
 
+	/* GM create method */
 	protected void createGM(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		gymMember.setNome(request.getParameter("name"));
-		gymMember.setSexo(request.getParameter("sexOption"));
-		gymMember.setPeso(request.getParameter("weight"));
+		gymMember.setName(request.getParameter("name"));
+		gymMember.setSex(request.getParameter("sexOption"));
+		gymMember.setWeight(request.getParameter("weight"));
 
 		gymMemberDAO.addGymMember(gymMember);
 
@@ -119,14 +120,14 @@ public class Controller extends HttpServlet {
 
 	}
 
+	/* Method to go to update screen */
 	protected void telaUpdateGM(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
-		System.out.println(id);
 
 		gymMember = gymMemberDAO.findById(id);
 
-		ArrayList<GymMember> listaGymMember = gymMemberDAO.listar();
+		ArrayList<GymMember> listaGymMember = gymMemberDAO.list();
 		request.setAttribute("listaGM", listaGymMember);
 		request.setAttribute("gymMember", gymMember);
 
@@ -134,28 +135,26 @@ public class Controller extends HttpServlet {
 		rd.forward(request, response);
 
 	}
-
+	/* GM update method */
 	protected void updateGM(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		gymMember.setId(Integer.parseInt(request.getParameter("id")));
-		gymMember.setNome(request.getParameter("name"));
-		gymMember.setSexo(request.getParameter("sexOption"));
-		gymMember.setPeso(request.getParameter("weight"));
+		gymMember.setName(request.getParameter("name"));
+		gymMember.setSex(request.getParameter("sexOption"));
+		gymMember.setWeight(request.getParameter("weight"));
 
-		System.out.println("OLAAA");
-		gymMemberDAO.alterarGymMember(gymMember);
+		gymMemberDAO.updateGymMember(gymMember);
 
 		response.sendRedirect("txt.html");
 
 	}
-
+	/* GM delete method */
 	protected void deleteGM(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Integer id = Integer.parseInt(request.getParameter("id"));
-		System.out.println(id);
 		gymMember.setId(id);
 
-		gymMemberDAO.deletarGymMember(gymMember);
+		gymMemberDAO.deleteGymMember(gymMember);
 
 		response.sendRedirect("txt.html");
 

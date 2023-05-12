@@ -9,6 +9,8 @@ GymMember gymMember = (GymMember) request.getAttribute("gymMember");
 <!DOCTYPE html>
 <html>
 <head>
+<!-- add css e js -->
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -26,24 +28,22 @@ GymMember gymMember = (GymMember) request.getAttribute("gymMember");
 
 		<tbody>
 			<%
-			
-				for (int i = 0; i < listaGymMember.size(); i++) {
-					String id = String.valueOf(listaGymMember.get(i).getId());
+			for (int i = 0; i < listaGymMember.size(); i++) {
+				String id = String.valueOf(listaGymMember.get(i).getId());
 			%>
 
 			<tr>
 
-				<td><%=listaGymMember.get(i).getNome()%></td>
-				<td><%=listaGymMember.get(i).getSexo()%></td>
-				<td><%=listaGymMember.get(i).getPeso()%></td>
-				<!-- passar o editar e deletar no servlet as req responsaveis por ir a pag-->
+				<td><%=listaGymMember.get(i).getName()%></td>
+				<td><%=listaGymMember.get(i).getSex()%></td>
+				<td><%=listaGymMember.get(i).getWeight()%></td>
+
 				<td><a href="goToUpdate?id=<%=id%>">Editar</a></td>
 				<td><a href="delete?id=<%=id%>">Deletar</a></td>
 
 			</tr>
 			<%
 			}
-			
 			%>
 		</tbody>
 	</table>

@@ -10,6 +10,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- add css e js -->
+
 	<h1>CREATE</h1>
 	<form action="createGM" method="get">
 		<!-- FAZER FORM -->
