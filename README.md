@@ -5,9 +5,9 @@ Technologies Used:
 - PostgreSql
 - JavaScript
 - Java
-- css
+- Css 3
 - Apache TomCat version 9.0
-- 
+- Html 5
 --------------------------------------------------------------------------------------------------------------------
 
 To use the application on WINDOWS it is necessary to download the following programs:
