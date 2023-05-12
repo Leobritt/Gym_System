@@ -18,7 +18,7 @@ To use the application on WINDOWS it is necessary to download the following prog
 
 . PostgreSQL, also available at the following link: ( https://www.postgresql.org/download/ )
 
-—------------------------------------------------ ------------------------------------------------
+—------------------------------------------------ ------------------------------------------------------------------------------------
 
 To use the application on LINUX it is necessary to download the following programs:
 
