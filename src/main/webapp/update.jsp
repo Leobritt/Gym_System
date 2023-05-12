@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="model.GymMember" %>
 <%@ page import="java.util.ArrayList"%>
-<%@ page %>
+<% GymMember gymMember = (GymMember) request.getAttribute("gymMember"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,7 @@
 	<form action="updateGM" method="post">
 		<!-- FAZER FORM -->
 <h2>Data about Gym Members</h2>
+<input type="hidden" name="id" value="<%=gymMember.getId() %>">
 		<label for="name">Name:</label> 
 		<input type="text" 
 			name="name"> 

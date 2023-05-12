@@ -17,7 +17,7 @@ import model.GymMember;
 import model.Login;
 
 @WebServlet(urlPatterns = { "/Controller", "/login", "/goToList", "/goToCreate", "/createGM", "/goToUpdate",
-		"/updateGM","/delete" })
+		"/updateGM", "/delete" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -48,8 +48,8 @@ public class Controller extends HttpServlet {
 		} else if (action.equals("/goToUpdate")) {
 			/* método para ir pag update */
 			telaUpdateGM(request, response);
-		}else if(action.equals("/delete")) {
-			/*método para ir */
+		} else if (action.equals("/delete")) {
+			/* método para ir */
 			deleteGM(request, response);
 		}
 	}
@@ -77,15 +77,16 @@ public class Controller extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("txt.html");
 				rd.forward(request, response);
 				System.out.println("sucesso");
-			} else if (action.equals("/updateGM")) {
-				/* método para fazer Update */
-				updateGM(request, response);
-
 			} else {
 				/* redirecionar para a pagina de login */
 				RequestDispatcher rd = request.getRequestDispatcher("login.html");
 				rd.forward(request, response);
+
 			}
+		} else if (action.equals("/updateGM")) {
+			/* método para fazer Update */
+			updateGM(request, response);
+
 		}
 	}
 
@@ -140,25 +141,24 @@ public class Controller extends HttpServlet {
 		gymMember.setNome(request.getParameter("name"));
 		gymMember.setSexo(request.getParameter("sexOption"));
 		gymMember.setPeso(request.getParameter("weight"));
-		
-		
+
+		System.out.println("OLAAA");
 		gymMemberDAO.alterarGymMember(gymMember);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("listGymMember.jsp");
-		rd.forward(request, response);
+
+		response.sendRedirect("txt.html");
+
 	}
+
 	protected void deleteGM(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		System.out.println(id);
-		System.out.println("hello");
 		gymMember.setId(id);
-		
+
 		gymMemberDAO.deletarGymMember(gymMember);
-		
+
 		response.sendRedirect("txt.html");
-		
+
 	}
-	
-	
+
 }

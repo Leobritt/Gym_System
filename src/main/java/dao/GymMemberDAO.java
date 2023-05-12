@@ -47,7 +47,7 @@ public class GymMemberDAO {
 			pst.setString(3, gymMember.getPeso());
 			
 			pst.executeUpdate();
-		} catch (Exception e) {
+		} catch (Exception e) { 	
 			System.out.println(e);
 		}
 	}
