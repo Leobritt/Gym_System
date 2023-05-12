@@ -7,16 +7,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Create</title>
+<link rel="stylesheet" href="createupdate.css">
+
 </head>
 <body>
 <!-- add css e js -->
 
 	<h1>CREATE</h1>
 	<form action="createGM" method="get">
-		<!-- FAZER FORM -->
-<h2>Data about Gym Members</h2>
+    <h2>Data about Gym Members</h2>
 		<label for="name">Name:</label> 
+		<br>
 		<input type="text" 
 			name="name"> 
 			<br> 
@@ -33,8 +35,11 @@
 <br> 
 <br>
         <label for="weight">Weight:</label> 
+        <br>
 		<input type="text" 
 			name="weight"> 
+			<br>
+			<br>
 		<input type="submit">
 		
 	</form>

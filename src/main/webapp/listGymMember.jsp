@@ -9,10 +9,10 @@ GymMember gymMember = (GymMember) request.getAttribute("gymMember");
 <!DOCTYPE html>
 <html>
 <head>
-<!-- add css e js -->
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="listGymMember.css">
 </head>
 <body>
 	<h1>Gym Members</h1>
@@ -38,8 +38,8 @@ GymMember gymMember = (GymMember) request.getAttribute("gymMember");
 				<td><%=listaGymMember.get(i).getSex()%></td>
 				<td><%=listaGymMember.get(i).getWeight()%></td>
 
-				<td><a href="goToUpdate?id=<%=id%>">Editar</a></td>
-				<td><a href="delete?id=<%=id%>">Deletar</a></td>
+				<td><a href="goToUpdate?id=<%=id%>" class="edit-link">Editar</a></td>
+				<td><a href="delete?id=<%=id%>" class="delete-link">Deletar</a></td>
 
 			</tr>
 			<%

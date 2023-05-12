@@ -1,0 +1,64 @@
+/* Set the font to the entire page */
+body {
+	font-family: Arial, sans-serif;
+	background-color: rgba(23, 40, 53, 0.8);
+}
+
+h1 {
+	text-align: center;
+	color: white;
+}
+
+/* Define a style for the table */
+table {
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+/* Define a style for the table cells */
+td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: center;
+	color: white;
+}
+
+/* Define a style for the table header */
+th {
+	color: white;
+	background-color: #729fcf;
+}
+
+/* Define a style for the edit link */
+a.edit-link {
+	background-color: #36b367;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-right: 5px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+/* Define a style for the delete link */
+a.delete-link {
+	background-color: #ff2b2b;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-right: 5px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+
+a.delete-link:hover {
+	background-color: #ff4d4d;
+}
+a.edit-link:hover {
+	background-color: #36b367;
+}

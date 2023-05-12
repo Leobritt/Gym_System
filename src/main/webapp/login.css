@@ -1,0 +1,97 @@
+/* Set the font to the entire page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(23,40,53,0.8);
+}
+
+/* Center the form on the page */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+/* Set the font to the entire page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(23,40,53,0.8);
+}
+
+/* Center the form on the page */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Input label style */
+label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Style of text and password entries */
+input[type="text"], input[type="password"] {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Submit button style */
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Style the submit button when the mouse is over it */
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Center and style the heading */
+h1 {
+  text-align: center;
+  color: white;
+}
+
+/* Input label style */
+label {
+  margin-right: 10px;
+  font-weight: bold;
+    color: white;
+  
+}
+
+/* Style of text and password entries */
+input[type="text"], input[type="password"] {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Submit button style */
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Style the submit button when the mouse is over it */
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+

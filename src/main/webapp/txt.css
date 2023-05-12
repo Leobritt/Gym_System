@@ -1,0 +1,63 @@
+/* Sets the font for the whole page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(23,40,53,0.8);
+  text-align: center;
+}
+
+/* Style the main title */
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+/* Define style for the subtitle */
+h2 {
+  color: white;
+  text-align: center;
+  font-style: italic;
+  text-shadow: 2px 2px 2px #000000;
+  margin-top: 30px;
+}
+
+/* Set style for buttons */
+a {
+  background-color: #ffffff;
+  color: #2a2a2a;
+  text-decoration: none;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 2px 2px 2px #000000;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 4px 4px #000000;
+}
+
+/* Define style for the first button */
+a:nth-child(1) {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+/* Define style for the second button */
+a:nth-child(2) {
+  background-color: #36b367;
+  color: #ffffff;
+}
+
+/* Center the buttons */
+body a {
+  margin: 0 10px;
+}
+
+
