@@ -3,7 +3,6 @@ Java Web Project using Servlet
 Technologies Used:
 - JSP
 - PostgreSql
-- JavaScript
 - Java
 - Css 3
 - Apache TomCat version 9.0
